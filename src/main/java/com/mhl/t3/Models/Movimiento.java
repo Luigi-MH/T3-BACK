@@ -36,10 +36,10 @@ public class Movimiento {
     private int cantidad;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "TipoMovimiento", nullable = false)
+    @Column(name = "TipoMovimiento", nullable = false, columnDefinition = "ENUM('Entrada','Salida')")
     private TipoMovimiento tipoMovimiento;
 
-    @Column(name = "FechaMovimiento", insertable = false, updatable = false)
+    @Column(name = "FechaMovimiento", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP",  insertable = false, updatable = false)
     private LocalDateTime fechaMovimiento;
 
     public enum TipoMovimiento {

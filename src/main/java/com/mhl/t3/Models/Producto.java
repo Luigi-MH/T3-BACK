@@ -2,7 +2,6 @@ package com.mhl.t3.Models;
 
 import java.time.LocalDateTime;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,6 +33,7 @@ public class Producto {
     @Column(name = "StockMinimo", nullable = false)
     private int stockMinimo;
 
-    @Column(name = "FechaActualizacion", insertable = false, updatable = false)
+    @Column(name = "FechaActualizacion", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP",  insertable = false, updatable = false)
     private LocalDateTime fechaActualizacion;
+
 }
